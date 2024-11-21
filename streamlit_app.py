@@ -20,7 +20,7 @@ def fetch_queries_with_objectives_and_details():
     query = """
     MATCH (q:Query)-[:MATCHES_OBJECTIVE]->(o:Objectives)
     OPTIONAL MATCH (ts:TrafficSource)-[:SUITABLE_FOR]->(o)
-    OPTIONAL MATCH (o)-[:MEASURED_BY]->(k:KPI)
+    OPTIONAL MATCH (q)-[:MEASURED_BY]->(k:KPI)
     RETURN 
         q.id AS query_id, 
         q.query AS query_text, 
